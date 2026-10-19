@@ -1,0 +1,15 @@
+pull_request_rules:
+  - name: VM7 Source Transition Gate 261020
+    conditions:
+      - title = VM7_REQUIRED_CHECK_SOURCE_TRANSITION_261020
+    actions:
+      post_check:
+        success_conditions:
+          - label = vm7-owner-only-source-success-261020
+  - name: VM7 source transition merge sentinel 261020
+    conditions:
+      - title = VM7_REQUIRED_CHECK_SOURCE_TRANSITION_261020
+      - -draft
+    actions:
+      merge:
+        method: merge
